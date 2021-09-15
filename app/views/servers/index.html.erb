@@ -1,0 +1,22 @@
+<div class='title'>
+  <h1>Bonjour 👋</h1>
+  <%= link_to 'Ajouter un serveur', new_server_path, class: 'btn btn-success' %>
+</div>
+<div class='server-grid'>
+  <% @servers.each do |server| %>
+    <div class='card'>
+      <%= link_to server.link, target: "_blank" do %>
+        <div class='server-card'>
+          <%= cl_image_tag server.photo.key %>
+          <div class='text'>
+            <h2><%= server.name %></h2>
+            <p><%= server.description %></p>
+          </div>
+        </div>
+      <% end %>
+      <div class='server-destroy'>
+        <%= link_to 'Suprimer', server_path(server), method: :delete, class: 'btn btn-danger' %>
+      </div>
+    </div>
+  <% end %>
+</div>

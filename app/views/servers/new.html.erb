@@ -1,0 +1,10 @@
+<div class='title'>
+  <h1>Nouveau serveur</h1>
+</div>
+<%= simple_form_for @server do |f| %>
+  <%= f.input :name, label: 'Nom'%>
+  <%= f.input :description %>
+  <%= f.input :link, label: 'Lien' %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit "Ajouter", class: "btn btn-primary" %>
+<% end %>
